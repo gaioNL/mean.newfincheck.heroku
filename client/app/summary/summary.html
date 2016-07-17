@@ -1,0 +1,97 @@
+
+        <div class="container">
+
+            <div class="row row-content">
+                <div class="col-xs-12 col-sm-9 ">    
+                    <div id="status-buttons" class="text-center">
+                        <a ui-sref="main"><span></span>Start</a>
+                        <a ui-sref="main.about"><span></span>About You</a>
+                        <a  ui-sref="main.yourfinance"><span></span>Income & Assets</a>
+                        <a  ui-sref="main.compare"><span></span> Your Spending</a>
+                        <a  ui-sref-active="active" ui-sref="main.summary"><span></span> Summary</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content">
+              
+              <div class="col-xs-12 col-sm-9">
+                        
+                    <div class="graph span6" ng-if=true>
+                          <h3 class="text-center"><b>What do you spend on?</b></h3>
+                          <canvas ng-if=true id="pie" class="chart chart-pie" chart-data="doughnutData" chart-labels="doughnutLabels"></canvas>
+
+                    </div>
+
+             </div>
+            </div>
+            <div class="row row-content"> 
+              <div class="col-xs-12 col-sm-9">
+                   <h3 class="text-center"><b>Your Spending vs Your Peers</b></h3>             
+              </div>
+            </div>
+            <div class="row row-content"> 
+              <div class="col-xs-12 col-sm-9">
+                <div class="graph span6" ng-if=true>
+                    <h4 class="text-center"><b>Mortgage</b></h4> 
+                     <canvas ng-if=true id="bar" class="chart chart-bar" chart-data="mortgagedata" chart-labels="labels" chart-series="series" chart-colours="colors"></canvas>
+                </div>
+              </div>
+            </div>          
+            <div class="row row-content"> 
+              <div class="col-xs-12 col-sm-9">
+                <div class="graph span6" ng-if=true>
+                    <h4 class="text-center"><b>Utilities</b></h4>
+                     <canvas ng-if=true id="bar" class="chart chart-bar" chart-data="utilitiesdata" chart-labels="labels" chart-series="series" chart-colours="colors"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="row row-content"> 
+              <div class="col-xs-12 col-sm-9">
+                <div class="graph span6" ng-if=true>
+                    <h4 class="text-center"><b>Insurances</b></h4>
+                     <canvas ng-if=true  id="bar" class="chart chart-bar" chart-data="insurancedata" chart-labels="labels" chart-series="series" chart-colours="colors"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="row row-content"> 
+              <div class="col-xs-12 col-sm-9">
+                <div class="graph span6" ng-if=true>
+                    <h4 class="text-center"><b>Education</b></h4>
+                      <canvas ng-if=true id="bar" class="chart chart-bar" chart-data="educationdata" chart-labels="labels" chart-series="series" chart-colours="colors"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="row row-content"> 
+              <div class="col-xs-12 col-sm-9">
+                <div class="graph span6" ng-if=true>
+                    <h4 class="text-center"><b>Transport</b></h4>
+                      <canvas ng-if=true id="bar" class="chart chart-bar" chart-data="transportdata" chart-labels="labels" chart-series="series" chart-colours="colors"> </canvas>
+                </div>
+              </div>
+            </div>
+            <div class="row row-content"> 
+              <div class="col-xs-12 col-sm-9">
+                <div class="graph span6" ng-if=true>
+                    <h4 class="text-center"><b>Housing</b></h4>
+                      <canvas ng-if=true id="bar" class="chart chart-bar" chart-data="housingdata" chart-labels="labels" chart-series="series" chart-colours="colors"> </canvas>
+                              </div>
+                </div>
+              </div>
+            </div>   
+            <div class="row row-content"> 
+              <div class="col-xs-12 col-sm-9"> 
+                         <div class="col-sm-offset-2 col-sm-3">
+                               <button type="submit" class="btn btn-block btn-default" ui-sref="main.compare">Back</button>
+                          </div>
+                          <div class="col-sm-offset-2 col-sm-3">
+                              <button type="submit" class="btn btn-block btn-warning" ui-sref="main">Restart</button>
+                          </div>
+              </div>
+            </div> 
+                    </div><!--panel  content-->
+                </div> <!--panel-->                
+              </div>
+
+            </div>
+ 
+        </div>

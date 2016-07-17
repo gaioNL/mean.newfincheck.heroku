@@ -1,0 +1,86 @@
+<div class="container">
+
+            <div class="row row-content">
+                <div class="col-xs-12 col-sm-9 ">    
+                    <div id="status-buttons" class="text-center">
+                        <a ui-sref="main"><span></span>Start</a>
+                        <a ui-sref-active="active" ui-sref="main.about"><span></span>About You</a>
+                        <a  ><span></span>Income & Assets</a>
+                        <a  ><span></span> Your Spending</a>
+                        <a  ><span></span> Summary</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content">
+                <div class="col-xs-12 col-sm-9 ">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center"><h3><b>About You</b></h3></div>
+                    <div class="panel-body">
+                    <form class="form-horizontal" role="form" name="aboutyouForm"  ng-submit="buildAboutYouProfile()" novalidate>
+                      
+                            <div class="form-group" ng-class="{ 'has-error' :  aboutyouForm.country.$error.$required && !aboutyouForm.country.$pristine  }" >
+
+                                <label for="country" class="col-sm-2 control-label">Your Country</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control"
+                                     ng-model="aboutyou.country"
+                                     ng-options="country.label as country.label for country in countries" required>
+                                     <option>Country</option>
+                                    </select>
+                                    <p ng-show="aboutyouForm.country.$error.$required && !aboutyouForm.country.$pristine" class="help-block">Select a Country</p>       
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' :  aboutyouForm.age.$error.required && !aboutyouForm.age.$pristine   }" >
+                                <label for="age" class="col-sm-2 control-label">Your Age</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control"
+                                     ng-model="aboutyou.age"
+                                     ng-options="age for age in agerange" required>
+                                     <option >Age</option>
+                                    </select>
+                                    <span ng-show="aboutyouForm.age.$error.required && !aboutyouForm.age.$pristine" class="help-block">Select your age</span>  
+                                </div>
+      
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : aboutyouForm.partner.$error.required && !aboutyouForm.partner.$pristine}">
+                                <label for="partner" class="col-sm-2 control-label">Do you have a partner?</label>
+                                <div class="col-sm-8" ng-init="aboutyou.partner=No">
+                                   <label><input type="radio" ng-model="aboutyou.partner" value="yes" required>Yes</label>
+                                   <label><input type="radio" ng-model="aboutyou.partner" value="no" required>No</label>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : aboutyouForm.kids.$error.required && !aboutyouForm.kids.$pristine}">
+                                <label for="kids" class="col-sm-2 control-label">Do you have kids?</label>
+                                <div class="col-sm-8">
+                                 <select class="form-control"
+                                         ng-model="aboutyou.kids"
+                                         ng-options="kids for kids in kidsNo" required>
+                                     <option>How many?</option>
+                                 </select>
+                                 <span ng-show="aboutyouForm.kids.$error.required && !aboutyouForm.kids.$pristine" class="help-block">Select your number of kids</span> 
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-3">
+                                    <button type="submit" class="btn btn-block btn-default" ui-sref="app">Back</button>
+                                </div>
+                                <div class="col-sm-offset-2 col-sm-3 ">
+                                    <button type="submit" ng-click="buildAboutYouProfile()" class="btn btn-block btn-warning" ui-sref="main.yourfinance" ng-disabled="aboutyouForm.$invalid">Next</button>
+                                </div>
+                            </div>
+
+
+                </form>
+                </div><!--panel  content-->
+                 </div> <!--panel-->
+        </div>
+        <div class="col-xs-12 col-sm-3">
+              <h3>Your Profile</h3>
+              <p>Your Country:{{aboutyou.country | uppercase }}</p>
+              <p>Your Age: {{aboutyou.age}}</p>
+              <p>Partner: {{aboutyou.partner | uppercase}}</p>
+              <p>Kids: {{aboutyou.kids}}</p>
+
+            </div>
+    </div>
+</div>

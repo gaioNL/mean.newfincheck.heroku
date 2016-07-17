@@ -1,0 +1,51 @@
+'use strict';
+
+class LoginController {
+  constructor(Auth, $state,$location) {
+    this.user = {};
+    this.errors = {};
+    this.submitted = false;
+
+    this.Auth = Auth;
+    this.$state = $state;
+    this.$location=$location;
+  }
+
+  login(form) {
+    this.submitted = true;
+
+    if (form.$valid) {
+      this.Auth.login({
+          email: this.user.email,
+          password: this.user.password
+        })
+        .then(
+          //() => {
+          // Logged in, redirect to home
+         // this.$state.go('main');
+       // }
+
+            function() {
+                // Logged in, redirect to home
+                var referrer = this.$state.params.referrer || this.$state.current.referrer || 'main';
+                this.state.go(referrer);
+                //if (typeof $cookieStore.get('returnUrl') != 'undefined' && $cookieStore.get('returnUrl') != ''){
+                //   this.$location.path($cookieStore.get('returnUrl'));
+                //   $cookieStore.remove('returnUrl');
+               // }
+                //else{
+                //    console.log("Passa LoginController");
+                //    this.$state.go('main');
+                //    //$location.path('/');
+                //}
+            }
+        )
+        .catch(err => {
+          this.errors.other = err.message;
+        });
+    }
+  }
+}
+
+angular.module('newFinCopenApp')
+  .controller('LoginController', LoginController);

@@ -1,0 +1,23 @@
+row-header {
+  margin: 0px auto;
+  padding: 0px 0px;
+}
+.jumbotron {
+  margin: 0px auto;
+  padding: 70px 30px;
+  background: #00802b;
+  color: floralwhite;
+}
+.breadcrumb > .active{
+  color: #ff9933;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}

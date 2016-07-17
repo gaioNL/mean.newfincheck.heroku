@@ -1,0 +1,109 @@
+
+        <div class="container">
+
+            <div class="row row-content">
+                <div class="col-xs-12 col-sm-9 ">    
+                    <div id="status-buttons" class="text-center">
+                        <a ui-sref="main"><span></span>Start</a>
+                        <a ui-sref="main.about"><span></span>About You</a>
+                        <a ui-sref="main.yourfinance"><span></span>Income & Assets</a>
+                        <a ui-sref-active="active" ui-sref="main.compare"><span></span> Your Spending</a>
+                        <a  ><span></span> Summary</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content">
+            <div class="col-xs-12 col-sm-9">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center"><h3><b>Your Spending</b></h3></div>
+
+                <div class="panel-body">
+                <form class="form-horizontal" role="form" name="yourSpendingForm"  ng-submit="searchPeerSpending()" novalidate>
+                   
+                            <div class="form-group" ng-class="{ 'has-error' : yourSpendingForm.mortgage.$error.$invalid && !yourSpendingForm.mortgage.$pristine}" >
+                                <label for="mortgage" class="col-sm-2 control-label">Mortgage</label>
+                                  <div class="col-sm-8 ">
+                                    
+                                    <input type="text" class="form-control" name="mortgage" ng-model="aboutyou.mortgage" placeholder="Your Mortgage" ng-pattern="/^[0-9]{1,10}$/" required>
+                                    <span ng-show="yourSpendingForm.mortgage.$error.pattern">Not a valid number!</span>  
+
+                                  </div>
+ 
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : yourSpendingForm.utilities.$error.$invalid && yourSpendingForm.utilities.$pristine}" >
+                                <label for="utilities" class="col-sm-2 control-label">Utilities</label>
+                                  <div class="col-sm-8">
+
+                                    <input type="text" class="form-control" name="utilities" ng-model="aboutyou.utilities" placeholder="Utilities Expenses" ng-pattern="/^[0-9]{1,10}$/" required>
+                                    <span ng-show="yourSpendingForm.utilities.$error.pattern">Not a valid number!</span> 
+
+                                  </div>
+
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : yourSpendingForm.insurance.$error.$invalid && !yourSpendingForm.insurance.$pristine}" >
+                                <label for="insurance" class="col-sm-2 control-label">Insurances</label>
+                                  <div class="col-sm-8">
+
+                                    <input type="text" class="form-control" name="insurance" ng-model="aboutyou.insurance" placeholder="Insurances Expenses" ng-pattern="/^[0-9]{1,10}$/" required>
+                                    <span ng-show="yourSpendingForm.insurance.$error.pattern">Not a valid number!</span> 
+
+                                  </div>
+                
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : yourSpendingForm.education.$error.$invalid && !yourSpendingForm.education.$pristine}" >
+                                <label for="education" class="col-sm-2 control-label">Education</label>
+                                  <div class="col-sm-8 ">
+  
+                                    <input type="text" class="form-control" name="education" ng-model="aboutyou.education" placeholder="Education Expenses" ng-pattern="/^[0-9]{1,10}$/" required>
+                                    <span ng-show="yourSpendingForm.education.$error.pattern">Not a valid number!</span> 
+
+                                  </div>
+    
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : yourSpendingForm.transport.$error.$invalid && !yourSpendingForm.transport.$pristine}" >
+                                <label for="transport" class="col-sm-2 control-label">Transport</label>
+                                  <div class="col-sm-8">
+
+                                    <input type="text" class="form-control" name="transport" ng-model="aboutyou.transport" placeholder="Transport Expenses" ng-pattern="/^[0-9]{1,10}$/" required>
+                                    <span ng-show="yourSpendingForm.transport.$error.pattern">Not a valid number!</span> 
+
+                                  </div>
+                 
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : yourSpendingForm.housing.$error.$invalid && !yourSpendingForm.housing.$pristine}" >
+                                <label for="housing" class="col-sm-2 control-label">Housing</label>
+                                  <div class="col-sm-8 ">
+
+                                  <input type="text" class="form-control" name="housing" ng-model="aboutyou.housing" placeholder="Housing Expenses" ng-pattern="/^[0-9]{1,10}$/" required>
+                                    <span ng-show="yourSpendingForm.housing.$error.pattern">Not a valid number!</span> 
+                
+                                  </div>
+                            </div>
+                            <div class="form-group">  
+                                <div class="col-sm-offset-2 col-sm-3">
+                                     <button type="submit" class="btn btn-block btn-default" ui-sref="main.yourfinance">Back</button>
+                                </div>
+                               <div class="col-sm-offset-2 col-sm-3 ">
+                                     <button type="submit" class="btn btn-block btn-warning" ng-click="searchPeerSpending()" >Compare</button>
+                               </div>
+                            </div>
+                
+                </form>
+
+                </div><!--panel  content-->
+
+            </div> <!--panel-->
+            </div>
+            
+              <div class="col-xs-12 col-sm-3">
+                <h3>Your Profile</h3>
+                <p>Your Country:{{aboutyou.country | uppercase }}</p>
+                <p>Your Age: {{aboutyou.age}}</p>
+                <p>Partner: {{aboutyou.partner | uppercase}}</p>
+                <p>Kids: {{aboutyou.kids}}</p>
+                <p>Income: {{aboutyou.income | currency}}</p>
+                <p>House: {{aboutyou.houseType}}</p>
+                <p>Car: {{aboutyou.carType}}</p>
+              </div>
+        </div><!-- Row content-->
+      </div>  
