@@ -6,8 +6,9 @@
 // You will need to set these on the server you deploy to.
 
 module.exports = {
-  DOMAIN:           'http://localhost:9000',
+  DOMAIN:           'http://localhost:5000',
   SESSION_SECRET:   'newfincopen-secret',
+  PORT: 5000,
 
   GOOGLE_ID:        'app-id',
   GOOGLE_SECRET:    'secret',

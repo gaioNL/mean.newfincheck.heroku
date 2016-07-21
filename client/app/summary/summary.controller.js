@@ -28,6 +28,7 @@ var paramsConfig = {
 
 console.log("SummaryController : %0",paramsConfig.params);
 
+
 //$http.get('/api/spendingrefs',paramsConfig).success(function(response) 
 profileFactory.query(dataConfig).$promise.then(function (response)
 {

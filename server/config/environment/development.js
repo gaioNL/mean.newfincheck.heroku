@@ -6,7 +6,8 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/newfincopen-dev'
+  	//: process.env.MONGOLAB_URI
+    uri: process.env.MONGOLAB_URI || 'mongodb://localhost/newfincopen-dev'
   },
 
   // Seed database on startup
