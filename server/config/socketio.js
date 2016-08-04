@@ -3,7 +3,8 @@
  */
 'use strict';
 
-import config from './environment';
+//import config from './environment';
+var config = require('./environment');
 
 // When the user disconnects.. perform this
 function onDisconnect(socket) {
