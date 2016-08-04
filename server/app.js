@@ -31,9 +31,12 @@ var socketio = require('socket.io')(server, {
   serveClient: config.env !== 'production',
   path: '/socket.io-client'
 });
-require('./config/socketio').default(socketio);
-require('./config/express').default(app);
-require('./routes').default(app);
+//require('./config/socketio').default(socketio);
+socketio.use('./config/socketio');
+//require('./config/express').default(app);
+app.use('./config/express');
+//require('./routes').default(app);
+app.use('./routes');
 
 // Start server
 function startServer() {
