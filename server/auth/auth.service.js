@@ -1,11 +1,17 @@
 'use strict';
 
-import passport from 'passport';
-import config from '../config/environment';
-import jwt from 'jsonwebtoken';
-import expressJwt from 'express-jwt';
-import compose from 'composable-middleware';
-import User from '../api/user/user.model';
+//import passport from 'passport';
+var passport = require('passport');
+//import config from '../config/environment';
+var config = require('../config/environment');
+//import jwt from 'jsonwebtoken';
+var jwt = require('jsonwebtoken');
+//import expressJwt from 'express-jwt';
+var expressJwt = require('express-jwt');
+//import compose from 'composable-middleware';
+var compose = require('composable-middleware');
+//import User from '../api/user/user.model';
+var User = require('../api/user/user.model');
 
 var validateJwt = expressJwt({
   secret: config.secrets.session
@@ -15,7 +21,7 @@ var validateJwt = expressJwt({
  * Attaches the user object to the request if authenticated
  * Otherwise returns 403
  */
-export function isAuthenticated() {
+module.exports.isAuthenticated= function() {
   return compose()
     // Validate jwt
     .use(function(req, res, next) {
@@ -42,7 +48,7 @@ export function isAuthenticated() {
 /**
  * Checks if the user role meets the minimum requirements of the route
  */
-export function hasRole(roleRequired) {
+module.exports.hasRole= function(roleRequired) {
   if (!roleRequired) {
     throw new Error('Required role needs to be set');
   }
@@ -62,7 +68,7 @@ export function hasRole(roleRequired) {
 /**
  * Returns a jwt token signed by the app secret
  */
-export function signToken(id, role) {
+module.exports.signToken =function(id, role) {
   return jwt.sign({ _id: id, role: role }, config.secrets.session, {
     expiresIn: 60 * 60 * 5
   });
@@ -71,7 +77,7 @@ export function signToken(id, role) {
 /**
  * Set token cookie directly for oAuth strategies
  */
-export function setTokenCookie(req, res) {
+module.exports.setTokenCookie = function(req, res) {
 
   if (!req.user) { 
       return res.json(404, { message: 'Something went wrong, please try again.'}); 
