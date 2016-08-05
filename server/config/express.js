@@ -37,7 +37,7 @@ var mongoose = require('mongoose');
 
 var MongoStore = connectMongo(session);
 
-export default function(app) {
+module.exports.default = function(app) {
   var env = app.get('env');
 
   if (env === 'development' || env === 'test') {
