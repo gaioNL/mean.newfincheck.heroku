@@ -58,4 +58,5 @@ housing: {
     timestamps: true
 });
 
-export default mongoose.model('Spendingref', SpendingrefSchema);
+//export default mongoose.model('Spendingref', SpendingrefSchema);
+module.exports.default = mongoose.model('Spendingref', SpendingrefSchema);
