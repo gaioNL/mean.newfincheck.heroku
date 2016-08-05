@@ -9,8 +9,11 @@
 
 'use strict';
 
-import _ from 'lodash';
-import Spendingref from './spendingref.model';
+//import _ from 'lodash';
+var _ = require('lodash');
+
+//import Spendingref from './spendingref.model';
+var Spendingref = require('./spendingref.model'); 
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -60,14 +63,14 @@ function handleError(res, statusCode) {
 }
 
 //ORIGINAL: Gets a list of Spendingrefs
-export function index(req, res) {
+module.exports.index= function(req, res) {
   return Spendingref.find(req.query).exec()
    .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
 // Gets a single Spendingref from the DB
-export function show(req, res) {
+module.exports.show = function(req, res) {
   return Spendingref.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
@@ -75,14 +78,14 @@ export function show(req, res) {
 }
 
 // Creates a new Spendingref in the DB
-export function create(req, res) {
+module.exports.create =  function(req, res) {
   return Spendingref.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
 // Updates an existing Spendingref in the DB
-export function update(req, res) {
+module.exports..update = function(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
@@ -94,7 +97,7 @@ export function update(req, res) {
 }
 
 // Deletes a Spendingref from the DB
-export function destroy(req, res) {
+module.exports.destroy = function(req, res) {
   return Spendingref.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
