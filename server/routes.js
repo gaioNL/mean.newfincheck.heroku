@@ -4,10 +4,12 @@
 
 'use strict';
 
-import errors from './components/errors';
-import path from 'path';
+//import errors from './components/errors';
+var errors = require('./components/errors'); 
+//import path from 'path';
+var path = require('path');
 
-export default function(app) {
+module.exports.default = function(app) {
   // Insert routes below
   app.use('/api/spendingrefs', require('./api/spendingref'));
   app.use('/api/things', require('./api/thing'));
