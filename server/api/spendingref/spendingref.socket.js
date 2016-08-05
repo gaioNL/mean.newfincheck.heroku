@@ -4,12 +4,12 @@
 
 'use strict';
 
-import SpendingrefEvents from './spendingref.events';
-
+//import SpendingrefEvents from './spendingref.events';
+var SpendingrefEvents = require('./spendingref.events');
 // Model events to emit
 var events = ['find','save', 'remove'];
 
-export function register(socket) {
+module.exports.register= function(socket) {
   // Bind model events to socket events
   for (var i = 0, eventsLength = events.length; i < eventsLength; i++) {
     var event = events[i];

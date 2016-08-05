@@ -4,8 +4,11 @@
 
 'use strict';
 
-import {EventEmitter} from 'events';
-import Spendingref from './spendingref.model';
+//import {EventEmitter} from 'events';
+var {EventEmitter} = require('events');
+//import Spendingref from './spendingref.model';
+var Spendingref = require('./spendingref.model');
+
 var SpendingrefEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)

@@ -1,6 +1,8 @@
 'use strict';
 
-import mongoose from 'mongoose';
+//import mongoose from 'mongoose';
+
+var mongoose = require('mongoose');
 
 var SpendingrefSchema = new mongoose.Schema({
 country: {
