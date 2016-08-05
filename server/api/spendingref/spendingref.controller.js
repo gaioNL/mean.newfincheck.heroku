@@ -85,7 +85,7 @@ module.exports.create =  function(req, res) {
 }
 
 // Updates an existing Spendingref in the DB
-module.exports..update = function(req, res) {
+module.exports.update = function(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
