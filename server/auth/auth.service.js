@@ -54,7 +54,7 @@ module.exports.hasRole= function(roleRequired) {
   }
 
   return compose()
-    .use(isAuthenticated())
+    .use(module.exports.isAuthenticated())
     .use(function meetsRequirements(req, res, next) {
       if (config.userRoles.indexOf(req.user.role) >=
           config.userRoles.indexOf(roleRequired)) {
