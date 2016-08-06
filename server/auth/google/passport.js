@@ -1,7 +1,10 @@
-import passport from 'passport';
-import {Strategy as GoogleStrategy} from 'passport-google-oauth20';
+//import passport from 'passport';
+var passport = require('passport');
+//import {Strategy as GoogleStrategy} from 'passport-google-oauth20';
+var passportgoogle = require('passport-google-oauth20');
+var GoogleStrategy = passportgoogle.Strategy;
 
-export function setup(User, config) {
+module.exports.setup= function(User, config) {
   passport.use(new GoogleStrategy({
     clientID: config.google.clientID,
     clientSecret: config.google.clientSecret,
