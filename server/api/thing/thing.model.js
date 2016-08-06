@@ -1,6 +1,7 @@
 'use strict';
 
-import mongoose from 'mongoose';
+//import mongoose from 'mongoose';
+var mongoose = require('mongoose');
 
 var ThingSchema = new mongoose.Schema({
   name: String,
@@ -8,4 +9,4 @@ var ThingSchema = new mongoose.Schema({
   active: Boolean
 });
 
-export default mongoose.model('Thing', ThingSchema);
+module.exports.default = mongoose.model('Thing', ThingSchema);
