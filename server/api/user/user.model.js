@@ -6,7 +6,8 @@ var crypto = require('crypto');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 //import {Schema} from 'mongoose';
-var {Schema} = require('mongoose');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 const authTypes = ['github', 'twitter', 'facebook', 'google'];
 
