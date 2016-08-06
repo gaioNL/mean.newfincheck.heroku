@@ -2,7 +2,7 @@
 
 //import {Router} from 'express';
 var express = require('express');
-var Router = mongoose.Router;
+var Router = express.Router;
 
 //import * as controller from './user.controller';
 var controller = require('./user.controller');
