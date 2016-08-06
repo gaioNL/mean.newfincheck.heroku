@@ -4,8 +4,14 @@
 
 'use strict';
 
-import {EventEmitter} from 'events';
-import User from './user.model';
+//import {EventEmitter} from 'events';
+var events = require('events');
+var EventEmitter = events.EventEmitter;
+
+
+//import User from './user.model';
+var User = require('./user.model');
+
 var UserEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
@@ -30,4 +36,4 @@ function emitEvent(event) {
   }
 }
 
-export default UserEvents;
+module.exports.default = UserEvents;
