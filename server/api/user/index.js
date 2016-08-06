@@ -1,10 +1,16 @@
 'use strict';
 
-import {Router} from 'express';
-import * as controller from './user.controller';
-import * as auth from '../../auth/auth.service';
+//import {Router} from 'express';
+var express = require('express');
+var Router = mongoose.Router;
 
-var router = new Router();
+//import * as controller from './user.controller';
+var controller = require('./user.controller');
+
+//import * as auth from '../../auth/auth.service';
+auth = require();
+
+var router = new Router('../../auth/auth.service');
 
 router.get('/', auth.hasRole('admin'), controller.index);
 router.delete('/:id', auth.hasRole('admin'), controller.destroy);
