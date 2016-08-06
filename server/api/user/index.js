@@ -8,9 +8,9 @@ var Router = express.Router;
 var controller = require('./user.controller');
 
 //import * as auth from '../../auth/auth.service';
-auth = require();
+var auth = require('../../auth/auth.service');
 
-var router = new Router('../../auth/auth.service');
+var router = new Router();
 
 router.get('/', auth.hasRole('admin'), controller.index);
 router.delete('/:id', auth.hasRole('admin'), controller.destroy);
