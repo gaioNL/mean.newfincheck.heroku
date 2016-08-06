@@ -5,7 +5,9 @@
 'use strict';
 
 //import {EventEmitter} from 'events';
-var {EventEmitter} = require('events');
+var events = require('events');
+var EventEmitter = events.EventEmitter;
+
 //import Spendingref from './spendingref.model';
 var Spendingref = require('./spendingref.model');
 
