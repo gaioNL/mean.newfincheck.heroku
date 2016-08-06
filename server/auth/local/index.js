@@ -1,8 +1,13 @@
 'use strict';
 
-import express from 'express';
-import passport from 'passport';
-import {signToken} from '../auth.service';
+//import express from 'express';
+var express = require('express');
+//import passport from 'passport';
+var passport = require('passport');
+
+//import {signToken} from '../auth.service';
+var authservice = require('../auth.service');
+var signToken = authservice.signToken;
 
 var router = express.Router();
 
@@ -21,4 +26,4 @@ router.post('/', function(req, res, next) {
   })(req, res, next)
 });
 
-export default router;
+module.exports.default =router;
