@@ -39,6 +39,7 @@ var MongoStore = connectMongo(session);
 
 module.exports.default = function(app) {
   var env = app.get('env');
+  console.log('Claudio env'+ env);
 
   if (env === 'development' || env === 'test') {
     app.use(express.static(path.join(config.root, '.tmp')));
