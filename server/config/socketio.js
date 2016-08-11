@@ -45,8 +45,8 @@ module.exports.default =function(socketio) {
 
     socket.connectedAt = new Date();
 
-    socket.log = function(data) {
-      console.log(`SocketIO ${socket.nsp.name} [${socket.address}]`, data);
+    socket.log = function(...data) {
+      console.log(`SocketIO ${socket.nsp.name} [${socket.address}]`, ...data);
     };
 
     // Call onDisconnect.
