@@ -7,7 +7,7 @@ angular.module('newFinCopenApp')
     var ioSocket = io('', {
       // Send auth token on connection, you will need to DI the Auth service above
       // 'query': 'token=' + Auth.getToken()
-      path: '/socket.io-client'
+      path: '/node_modules/socket.io/node_modules/socket.io-client'
     });
 
     var socket = socketFactory({
