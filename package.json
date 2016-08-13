@@ -108,7 +108,8 @@
   "scripts": {
     "test": "grunt test",
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
-    "start": "node server"
+    "start": "node server",
+    "postinstall": "bower install && grunt build"
   },
   "private": true
 }
