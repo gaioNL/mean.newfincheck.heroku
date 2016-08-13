@@ -50,6 +50,7 @@ module.exports.default = function(app) {
   }
 
   //Cla for Heroku
+  console.log("config.root "+config.root);
   app.use('/bower_components', express.static(config.root + '/bower_components'));
 
   app.set('appPath', path.join(config.root, 'client'));
