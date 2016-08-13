@@ -49,6 +49,9 @@ module.exports.default = function(app) {
     app.use(favicon(path.join(config.root, 'client', 'favicon.ico')));
   }
 
+  //Cla for Heroku
+  app.use('/bower_components', express.static(config.root + '/bower_components'));
+
   app.set('appPath', path.join(config.root, 'client'));
   app.use(express.static(app.get('appPath')));
   app.use(morgan('dev'));
