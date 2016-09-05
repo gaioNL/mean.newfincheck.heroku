@@ -11,7 +11,7 @@ var tmpEvents = require('events');
 //var EventEmitter = tmpEvents.EventEmitter;
 //new
 var SpendingrefEvents = new tmpEvents.EventEmitter();
-console.log("passa SpendingrefEvents ",+SpendingrefEvents);
+console.log("passa SpendingrefEvents " + SpendingrefEvents);
 
 //import Spendingref from './spendingref.model';
 var Spendingref = require('./spendingref.model');
