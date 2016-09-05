@@ -32,6 +32,7 @@ for (var e in events) {
 
 function emitEvent(event) {
   return function(doc) {
+  	console.log("passa doc.id " + doc._id );
     SpendingrefEvents.emit(event + ':' + doc._id, doc);
     SpendingrefEvents.emit(event, doc);
   }
