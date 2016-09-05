@@ -6,12 +6,14 @@
 
 //import {EventEmitter} from 'events';
 var tmpEvents = require('events');
-var EventEmitter = tmpEvents.EventEmitter;
+//old 
+//var SpendingrefEvents = new EventEmitter();
+//var EventEmitter = tmpEvents.EventEmitter;
+//new
+var SpendingrefEvents = new tmpEvents.EventEmitter();
 
 //import Spendingref from './spendingref.model';
 var Spendingref = require('./spendingref.model');
-
-var SpendingrefEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
 SpendingrefEvents.setMaxListeners(0);
