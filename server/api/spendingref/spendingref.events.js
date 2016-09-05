@@ -5,8 +5,8 @@
 'use strict';
 
 //import {EventEmitter} from 'events';
-var events = require('events');
-var EventEmitter = events.EventEmitter;
+var tmpEvents = require('events');
+var EventEmitter = tmpEvents.EventEmitter;
 
 //import Spendingref from './spendingref.model';
 var Spendingref = require('./spendingref.model');
@@ -26,7 +26,7 @@ var events = {
 // Register the event emitter to the model events
 for (var e in events) {
   var event = events[e];
-  console.log("e %0 event %0",e.event);
+  console.log("event %0",event);
   Spendingref.schema.post(e, emitEvent(event));
 }
 
