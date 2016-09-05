@@ -26,6 +26,7 @@ var events = {
 // Register the event emitter to the model events
 for (var e in events) {
   var event = events[e];
+  console.log("e %0 event %0",e.event);
   Spendingref.schema.post(e, emitEvent(event));
 }
 
