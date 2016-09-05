@@ -11,6 +11,7 @@ var tmpEvents = require('events');
 //var EventEmitter = tmpEvents.EventEmitter;
 //new
 var SpendingrefEvents = new tmpEvents.EventEmitter();
+console.log("passa SpendingrefEvents ",+SpendingrefEvents);
 
 //import Spendingref from './spendingref.model';
 var Spendingref = require('./spendingref.model');
@@ -34,7 +35,7 @@ for (var e in events) {
 
 function emitEvent(event) {
   return function(doc) {
-  	console.log("passa doc.id " + doc._id );
+  	console.log("passa emitEvent doc.id " + doc._id );
     SpendingrefEvents.emit(event + ':' + doc._id, doc);
     SpendingrefEvents.emit(event, doc);
   }
