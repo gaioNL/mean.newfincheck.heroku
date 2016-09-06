@@ -5,14 +5,15 @@
 'use strict';
 
 //import {EventEmitter} from 'events';
-var events = require('events');
-var EventEmitter = events.EventEmitter;
+var tmpEvents = require('events');
+//old
+//var EventEmitter = events.EventEmitter;
 
 
 //import User from './user.model';
 var User = require('./user.model');
 
-var UserEvents = new EventEmitter();
+var UserEvents = new tmpEvents.EventEmitter();
 
 // Set max event listeners (0 == unlimited)
 UserEvents.setMaxListeners(0);

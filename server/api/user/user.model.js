@@ -7,11 +7,12 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 //import {Schema} from 'mongoose';
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+//old
+//var Schema = mongoose.Schema;
 
 const authTypes = ['github', 'twitter', 'facebook', 'google'];
 
-var UserSchema = new Schema({
+var UserSchema = new mongoose.Schema({
   name: String,
   email: {
     type: String,
