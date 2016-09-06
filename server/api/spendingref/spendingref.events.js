@@ -15,6 +15,7 @@ console.log("passa SpendingrefEvents " + SpendingrefEvents);
 
 //import Spendingref from './spendingref.model';
 var Spendingref = require('./spendingref.model');
+console.log("passa Spendingref " + Spendingref.country);
 
 // Set max event listeners (0 == unlimited)
 SpendingrefEvents.setMaxListeners(0);
@@ -32,6 +33,7 @@ for (var e in events) {
   console.log("event %0",event);
   Spendingref.schema.post(e, emitEvent(event));
 }
+
 
 function emitEvent(event) {
   return function(doc) {
