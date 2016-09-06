@@ -3,8 +3,9 @@
 //import mongoose from 'mongoose';
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var SpendingrefSchema = new mongoose.Schema({
+var SpendingrefSchema = new Schema({
 country: {
     type: String,
     required: true,
