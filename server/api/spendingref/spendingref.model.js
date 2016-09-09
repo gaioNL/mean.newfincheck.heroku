@@ -5,7 +5,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-console.log("passa PRIMA Spendingref.model " + SpendingrefSchema);
+console.log("passa PRIMA Spendingref.model ");
 
 var SpendingrefSchema = new Schema({
 country: {
