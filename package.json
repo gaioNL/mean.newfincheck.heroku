@@ -67,6 +67,7 @@
     "passport-google-oauth20": "^1.0.0",
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.3.0",
+    "socket.io": "^1.3.5",
     "socketio-jwt": "^4.2.0"
   },
   "devDependencies": {
@@ -148,6 +149,7 @@
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.3.0",
     "angular-socket-io": "^0.7.0",
+    "socket.io": "^1.3.5",
     "socketio-jwt": "^4.2.0"
   },
   "engines": {
