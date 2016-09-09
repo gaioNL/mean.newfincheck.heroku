@@ -5,6 +5,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+console.log("passa PRIMA Spendingref.model " + SpendingrefSchema);
+
 var SpendingrefSchema = new Schema({
 country: {
     type: String,
@@ -59,7 +61,7 @@ housing: {
     timestamps: true
 });
 
-console.log("passa Spendingref.model " + SpendingrefSchema);
+console.log("passa DOPO Spendingref.model " + SpendingrefSchema);
 
 //export default mongoose.model('Spendingref', SpendingrefSchema);
 module.exports.default = mongoose.model('Spendingref', SpendingrefSchema);
