@@ -4,6 +4,7 @@
   "main": "server/app.js",
   "dependencies": {
     "angular-ui-router": "~0.2.15",
+    "angular-bootstrap": "~1.1.2",
     "angular-chart.js": "^1.0.0-alpha8",
     "angular-socket-io": "^0.7.0",
     "babel-polyfill": "^6.7.2",
@@ -74,7 +75,8 @@
     "font-awesome": ">=4.1.0"
   },
   "devDependencies": {
-    "angular-ui-router": "~0.2.15", 
+    "angular-ui-router": "~0.2.15",
+    "angular-bootstrap": "~1.1.2", 
     "autoprefixer": "^6.0.0",
     "babel-core": "^6.6.5",
     "babel-plugin-add-module-exports": "^0.2.1",
