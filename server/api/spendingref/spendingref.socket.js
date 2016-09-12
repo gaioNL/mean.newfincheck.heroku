@@ -14,7 +14,7 @@ module.exports.register= function(socket) {
   for (var i = 0, eventsLength = events.length; i < eventsLength; i++) {
     var event = events[i];
     var listener = createListener('spendingref:' + event, socket);
-    console.log("SpendingrefEvents registered " +event);
+    console.log("SpendingrefEvents registered  " +event);
 
     SpendingrefEvents.on(event, listener);
     socket.on('disconnect', removeListener(event, listener));
