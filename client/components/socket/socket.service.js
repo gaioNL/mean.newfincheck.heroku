@@ -7,7 +7,9 @@ angular.module('newFinCopenApp')
     var ioSocket = io('', {
       // Send auth token on connection, you will need to DI the Auth service above
       // 'query': 'token=' + Auth.getToken()
-      path: '/socket.io-client'
+      path: '/socket.io-client',
+      //claudio http://stackoverflow.com/questions/26217312/socket-io-and-multiple-dynos-on-heroku-node-js-app-websocket-is-closed-before
+      transports: ['websocket']
     });
 
     var socket = socketFactory({

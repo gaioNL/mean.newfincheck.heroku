@@ -33,6 +33,8 @@ var socketio = require('socket.io')(server, {
   path: '/socket.io-client'
 });
 
+//Claudio http://stackoverflow.com/questions/26217312/socket-io-and-multiple-dynos-on-heroku-node-js-app-websocket-is-closed-before
+socketio.set('transports', ['websocket']);
 
 
 require('./config/socketio').default(socketio);
