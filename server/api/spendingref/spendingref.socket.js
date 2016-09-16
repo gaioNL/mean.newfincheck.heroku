@@ -4,6 +4,8 @@
 
 'use strict';
 
+var mongoose = require('mongoose');
+
 //import SpendingrefEvents from './spendingref.events';
 var SpendingrefEvents = require('./spendingref.events');
 // Model events to emit
