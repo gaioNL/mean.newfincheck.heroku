@@ -4,6 +4,8 @@
 
 'use strict';
 
+var mongoose = require('mongoose');
+
 //import {EventEmitter} from 'events';
 var tmpEvents = require('events');
 //old 

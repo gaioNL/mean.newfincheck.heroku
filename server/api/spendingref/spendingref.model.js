@@ -64,4 +64,8 @@ housing: {
 console.log("passa DOPO Spendingref.model " + SpendingrefSchema);
 
 //export default mongoose.model('Spendingref', SpendingrefSchema);
-module.exports.default = mongoose.model('Spendingref', SpendingrefSchema);
+//module.exports.default = mongoose.model('Spendingref', SpendingrefSchema);
+
+Spendingrefs = mongoose.model('Spendingref', SpendingrefSchema);
+
+module.exports = Spendingrefs;
