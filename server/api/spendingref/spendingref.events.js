@@ -45,4 +45,4 @@ function emitEvent(event) {
   }
 }
 
-module.exports.default = SpendingrefEvents;
+module.exports = SpendingrefEvents;
