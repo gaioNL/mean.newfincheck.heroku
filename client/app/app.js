@@ -50,7 +50,7 @@ angular.module('newFinCopenApp', ['newFinCopenApp.auth', 'newFinCopenApp.admin',
              // route for graphical respresentation of the financial comparison
             .state('main.summary', {
                 url: 'summary',
-                authenticate:true,
+                //authenticate:true,
                 views: {
                     'content@': {
                         templateUrl : 'app/summary/summary.html',
