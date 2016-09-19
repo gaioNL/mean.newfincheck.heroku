@@ -1,6 +1,6 @@
 'use strict';
 
-var uristring = process.env.MONGODB_URI || process.env.MONGOHQ_URL + ":" process.env.PORT + "/" ;
+var uristring = process.env.MONGODB_URI || process.env.MONGOHQ_URL + ":" + process.env.PORT + "/" ;
 
 console.log("passa profileFactory " + uristring); 
 
