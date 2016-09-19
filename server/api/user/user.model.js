@@ -254,4 +254,4 @@ UserSchema.methods = {
   }
 };
 
-module.exports.default =  mongoose.model('User', UserSchema);
+module.exports =  mongoose.model('User', UserSchema);
