@@ -22,14 +22,16 @@ angular.module('newFinCopenApp')
 
     $scope.searchPeerSpending = function () {
         
-          Auth.isLoggedIn(function(loggedIn) {
-            if (!loggedIn) {
-                $state.go('login');
-            }
-            else{
-                $state.go('main.summary');
-            }
-          });
+          //Auth.isLoggedIn(function(loggedIn) {
+          //  if (!loggedIn) {
+          //      $state.go('login');
+          //  }
+          //  else{
+          //      $state.go('main.summary');
+          //  }
+          //});
+
+          $state.go('main.summary');
 
     };
 
